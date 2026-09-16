@@ -4,7 +4,7 @@ function Services() {
   const [services, setServices] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/services')
+    fetch(`${import.meta.env.VITE_API_URL}/api/services`)
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((err) => console.error('خطأ بجلب الخدمات:', err))
