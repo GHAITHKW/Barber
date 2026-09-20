@@ -30,7 +30,7 @@ function BookingForm() {
       setBookedTimes([])
       return
     }
-    fetch(`http://localhost:3000/api/appointments/booked-times?date=${formData.date}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/appointments/booked-times?date=${formData.date}`)
       .then((res) => res.json())
       .then((data) => setBookedTimes(data))
       .catch((err) => console.error('خطأ بجلب الأوقات المحجوزة:', err))
@@ -60,7 +60,7 @@ function BookingForm() {
     const datetime = `${formData.date}T${String(formData.time).padStart(2, '0')}:00:00`
 
     try {
-      const res = await fetch('http://localhost:3000/api/appointments', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
