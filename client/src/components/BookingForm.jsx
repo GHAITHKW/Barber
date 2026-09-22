@@ -95,7 +95,7 @@ function BookingForm() {
         (s) => s.id === Number(formData.serviceId),
       );
       const serviceName = selectedService ? selectedService.name : "";
-      const message = `مرحباً، بدي أأكد حجز موعد:
+      const message = `مرحباً، بدي ثبت حجز موعد:
 الاسم: ${formData.name}
 الهاتف: ${formData.phone}
 الخدمة: ${serviceName}
