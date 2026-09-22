@@ -33,7 +33,7 @@ function Services() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
               <span className="text-brand-accent font-semibold block text-lg">
-                {service.price} ر.س
+                {service.price} ل.س
               </span>
             </div>
           ))}
