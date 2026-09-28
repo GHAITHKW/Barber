@@ -102,7 +102,7 @@ function BookingForm() {
 التاريخ: ${formData.date}
 الوقت: ${formData.time}:00`;
 
-      const whatsappNumber = "963936707552";
+      const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
       setStatus("success");
