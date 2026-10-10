@@ -3,10 +3,14 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { PrismaClient } = require("@prisma/client");
-const { PrismaPg } = require("@prisma/adapter-pg");
+const { neonConfig } = require("@neondatabase/serverless");
+const { PrismaNeon } = require("@prisma/adapter-neon");
+const ws = require("ws");
+
+neonConfig.webSocketConstructor = ws;
 
 const app = express();
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
 const PORT = 3000;
 
